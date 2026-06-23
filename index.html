@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Latihan HTML/CSS/Javascript</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+   <header class="header">
+      <h1 class="header-title">Template Admin</h1>
+      <div class="user-info">
+         <span>Selamat datang, Admin</span>
+         <button id="logoutBtn" class="logout-btn"><a href="#">Logout</a></button>
+         <script>
+            // Konstanta Warna Pinky Terang
+            const PINK_AKSEN = '#ff80ab';    // Warna latar belakang pop-up (Pink Menengah/Sidebar)
+            const PINK_CERAH = '#e91e63';    // Warna tombol konfirmasi (Pink Cerah/Aksen utama)
+            const PINK_GELAP = '#c2185b';    // Warna tombol batal (Pink Gelap)
+            const TEKS_GELAP = '#4a001e';    // Warna teks pop-up (Pink Sangat Gelap)
+
+            document.getElementById('logoutBtn').addEventListener('click', function (event) {
+               event.preventDefault();
+               Swal.fire({
+                  title: 'Mau Logout?',
+                  text: 'Apakah kamu yakin ingin keluar dari dashboard?',
+                  icon: 'question',
+                  showCancelButton: true,
+                  confirmButtonText: 'Ya, Logout',
+                  cancelButtonText: 'Batal',
+                  // Mengubah warna SweetAlert sesuai tema Pinky Terang
+                  background: PINK_AKSEN,
+                  color: TEKS_GELAP,
+                  confirmButtonColor: PINK_CERAH,
+                  cancelButtonColor: PINK_GELAP
+               }).then((result) => {
+                  if (result.isConfirmed) {
+                     Swal.fire({
+                        title: 'Selamat!',
+                        text: 'Anda sudah logout.',
+                        icon: 'success',
+                        confirmButtonText: 'Oke',
+                        // Mengubah warna SweetAlert sesuai tema Pinky Terang
+                        background: PINK_AKSEN,
+                        color: TEKS_GELAP,
+                        confirmButtonColor: PINK_CERAH
+                     });
+                  }
+               });
+            });
+         </script>
+      </div>
+   </header>
+   <div class="container">
+      <aside class="sidebar">
+         <nav>
+            <h2 class="sidebar-title">Menu Utama</h2>
+            <ul>
+               <li><a href="#" class="menu-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>
+               <li><a href="#" class="menu-item"><i class="fa-solid fa-user"></i> Users</a></li>
+               <li><a href="#" class="menu-item"><i class="fa-solid fa-box"></i> Products</a></li>
+               <li><a href="#" class="menu-item"><i class="fa-solid fa-chart-line"></i> Reports</a></li>
+               <li><a href="#" class="menu-item"><i class="fa-solid fa-gear"></i> Settings</a></li>
+            </ul>
+         </nav>
+      </aside>
+      <main class="main-content">
+         <h2 class="content-title">Dashboard</h2>
+         <div class="content-wrapper">
+            <p>Selamat datang di Dashboard Admin</p>
+            <div class="stats-grid">
+               <div class="stat-card card-blue">
+                  <h3>Total Users</h3>
+                  <p>10</p>
+               </div>
+               <div class="stat-card card-green">
+                  <h3>Total Products</h3>
+                  <p>567</p>
+               </div>
+               <div class="stat-card card-yellow">
+                  <h3>Sales Today</h3>
+                  <p>34</p>
+               </div>
+            </div>
+            <br>
+            <hr>
+            <p id="paragrafTarget">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium culpa et animi sint distinctio
+               dolorum corporis veniam voluptas consectetur esse cumque, nobis architecto rem exercitationem magnam aut
+               nihil qui. Facere.
+            </p>
+            <button id="tombolUbah" class="logout-btn">Ubah Teks</button>
+            <br>
+            <hr>
+            <div class="galeri-container">
+               <h2>Galeri Pemandangan</h2>
+               <img id="gambarBesar" src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg"
+                  alt="Danau indah">
+
+               <div class="thumbnails">
+                  <img class="thumbnail" src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg"
+                     alt="Danau indah">
+                  <img class="thumbnail" src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg"
+                     alt="Gunung hijau">
+                  <img class="thumbnail" src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg"
+                     alt="Air terjun alami">
+                  <img class="thumbnail" src="https://images.pexels.com/photos/355241/pexels-photo-355241.jpeg"
+                     alt="Hutan berkabut">
+               </div>
+            </div>
+         </div>
+      </main>
+   </div>
+
+   <footer class="footer">
+      <p>Copyright &copy 2025 | Habsyi</p>
+   </footer>
+
+   <script>
+      // Konstanta Warna Pink Sangat Kalem/Dusty Rose
+      const PINK_PASTEL_BG = '#f7e0e0'; // Warna latar belakang pop-up (Sidebar)
+      const PINK_SEDANG = '#cc8080';    // Warna tombol konfirmasi (Pink Sedang)
+      const DUSTY_ROSE_GELAP = '#b37373';// Warna tombol batal (Dusty Rose Gelap)
+      const TEKS_GELAP_LEMBUT = '#4a4a4a'; // Warna teks pop-up (Abu-abu Gelap Lembut)
+      const CREAM_BG = '#fcfcfc'; // Warna background utama
+
+      document.getElementById('logoutBtn').addEventListener('click', function (event) {
+         event.preventDefault();
+         Swal.fire({
+            title: 'Mau Logout?',
+            text: 'Apakah kamu yakin ingin keluar dari dashboard?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Logout',
+            cancelButtonText: 'Batal',
+            // Mengubah warna SweetAlert sesuai tema Pink Kalem
+            background: PINK_PASTEL_BG,
+            color: TEKS_GELAP_LEMBUT,
+            confirmButtonColor: PINK_SEDANG,
+            cancelButtonColor: DUSTY_ROSE_GELAP
+         }).then((result) => {
+            if (result.isConfirmed) {
+               Swal.fire({
+                  title: 'Selamat!',
+                  text: 'Anda sudah logout.',
+                  icon: 'success',
+                  confirmButtonText: 'Oke',
+                  // Mengubah warna SweetAlert sesuai tema Pink Kalem
+                  background: PINK_PASTEL_BG,
+                  color: TEKS_GELAP_LEMBUT,
+                  confirmButtonColor: PINK_SEDANG
+               });
+            }
+         });
+      });
+
+      // Penyesuaian skrip "Ubah Teks"
+      const tombolGaya = document.getElementById("tombolUbah");
+      const paragrafGaya = document.getElementById("paragrafTarget");
+
+      const WARNA_TEKS_BARU = DUSTY_ROSE_GELAP; // #b37373
+      const WARNA_BG_BARU = CREAM_BG; // #fcfcfc
+
+      tombolGaya.addEventListener("click", function () {
+         paragrafGaya.innerHTML = "Teks dan gaya sudah diubah";
+
+         paragrafGaya.style.color = WARNA_TEKS_BARU;
+         paragrafGaya.style.fontSize = "20px";
+         paragrafGaya.style.backgroundColor = WARNA_BG_BARU;
+         paragrafGaya.style.padding = "10px";
+      });
+
+      // ... (Logika Thumbnail tetap sama) ...
+      const gambarBesar = document.getElementById("gambarBesar");
+      const thumbnails = document.querySelectorAll(".thumbnail");
+
+      thumbnails.forEach(function (thumb) {
+         thumb.addEventListener("click", function () {
+            const sumberGambarKecil = thumb.src;
+            gambarBesar.src = sumberGambarKecil.replace("w=100", "w=500");
+            gambarBesar.alt = thumb.alt;
+         });
+      });
+   </script>
