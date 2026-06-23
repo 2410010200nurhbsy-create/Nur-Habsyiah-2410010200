@@ -1,0 +1,265 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    /* Latar belakang utama Pink Sangat Pucat/Cream */
+    background-color: #fcfcfc; 
+    /* Warna teks utama Abu-abu Tua yang lembut */
+    color: #555555;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ===== HEADER ===== */
+.header {
+    /* Dusty Rose / Pink Pucat */
+    background-color: #e5b2b2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #3d3d3d; /* Teks agak gelap di header terang */
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* Aksen Dusty Rose Gelap */
+    color: #b37373;
+}
+
+.header .user-info {
+    display: flex;
+    align-items: center;
+    color: #777777;
+}
+
+.header .user-info span {
+    margin-right: 1rem;
+}
+
+.logout-btn {
+    padding: 0.5rem 1rem;
+    /* Tombol Aksen Pink Sedang */
+    background-color: #cc8080;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    /* Hover Pink Lebih Gelap */
+    background-color: #a36161;
+}
+
+/* ===== SIDEBAR ===== */
+.container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 250px;
+    /* Pink Pastel Hangat */
+    background-color: #f7e0e0;
+    /* Warna teks sidebar */
+    color: #4a4a4a;
+    padding: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: inset -1px 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    /* Aksen Dusty Rose Gelap */
+    color: #b37373;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    /* Warna item menu normal */
+    color: #555555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover {
+    /* Hover Pink Sedang */
+    background-color: #e5b2b2;
+    color: #333333; /* Teks gelap saat hover */
+}
+
+.menu-item i {
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+    /* Warna aksen Pink Sedang */
+    color: #cc8080;
+    transition: color 0.3s ease;
+}
+
+.menu-item:hover i {
+    /* Saat hover, warna lebih terang */
+    color: #333333;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    /* Warna konten putih bersih */
+    background-color: #ffffff;
+}
+
+.content-title {
+    font-size: 2rem;
+    font-weight: bold;
+    /* Warna Dusty Rose Gelap */
+    color: #b37373;
+    margin-bottom: 1.5rem;
+}
+
+.content-wrapper {
+    /* Latar belakang wrapper konten */
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.stats-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+}
+
+/* ===== STAT CARDS ===== */
+.stat-card {
+    border-left: 5px solid;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    /* Latar belakang kartu Pink Sangat Pucat */
+    background-color: #ffeff4;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-weight: bold;
+    color: #666666; /* Judul Abu-abu */
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+/* Warna kartu (Nuansa Dusty Rose/Pink Pucat) */
+.card-blue {
+    /* Dusty Rose Gelap */
+    border-color: #b37373;
+    color: #b37373;
+}
+
+.card-green {
+    /* Pink Sedang */
+    border-color: #cc8080;
+    color: #cc8080;
+}
+
+.card-yellow {
+    /* Pink Pucat */
+    border-color: #e5b2b2;
+    color: #e5b2b2;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    /* Footer menggunakan Dusty Rose */
+    background-color: #e5b2b2;
+    text-align: center;
+    padding: 1rem;
+    /* Warna teks footer */
+    color: #555555;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.galeri-container {
+    text-align: center;
+    /* Latar belakang galeri Pink Pastel Hangat */
+    background-color: #f7e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#gambarBesar {
+    max-width: 500px;
+    height: auto;
+    /* Border Dusty Rose Gelap */
+    border: 5px solid #b37373;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.thumbnails img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    margin: 5px;
+    cursor: pointer;
+    /* Border thumbnail normal */
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.thumbnails img:hover {
+    /* Border thumbnail hover Pink Sedang */
+    border-color: #cc8080;
+    transform: scale(1.1);
+}
